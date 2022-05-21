@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "login": "admin",
+      "password": "admin",
+      "role": 0,
+      "id": 1
+    },
+    {
+      "login": "customer",
+      "password": "customer",
+      "role": 1,
+      "id": 2
+    },
+    {
+      "login": "seller",
+      "password": "seller",
+      "role": 2,
+      "id": 3
+    }
+  ],
+  "permissions": [{}]
+}
