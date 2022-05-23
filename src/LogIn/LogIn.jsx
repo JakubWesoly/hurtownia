@@ -20,7 +20,7 @@ const LogIn = ({ show, changeLoginVisibility }) => {
         }
         localStorage.setItem(
           'userInfo',
-          JSON.stringify([data[0].login, data[0].role])
+          JSON.stringify([data[0].id, data[0].login, data[0].role])
         );
         console.log(localStorage.getItem('userInfo'));
         navigate('/home');

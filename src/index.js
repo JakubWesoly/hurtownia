@@ -7,17 +7,25 @@ import Homepage from './Homepage/Homepage';
 import Home from './Home/Home';
 
 import './index.css';
+import LogOut from './LogOut/LogOut';
+import AddOrder from './AddOrder/AddOrder';
+import Shop from './Shop/Shop';
+import CheckOrders from './CheckOrders/CheckOrders';
+import ManageUsers from './ManageUsers/ManageUsers';
 
 const App = () => {
-  let userInfo = JSON.parse(localStorage.getItem('userInfo'));
-
   return (
     <>
-      <Navigation user={userInfo} />
       <Router>
+        <Navigation />
         <Routes>
           <Route path='/' element={<Homepage />} />
-          <Route path='/Home' element={<Home user={userInfo} />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/shop' element={<Shop />} />
+          <Route path='/add-order' element={<AddOrder />} />
+          <Route path='/check-orders' element={<CheckOrders />} />
+          <Route path='/manage-users' element={<ManageUsers />} />
+          <Route path='/logout' element={<LogOut />} />
         </Routes>
       </Router>
     </>

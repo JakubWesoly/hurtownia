@@ -1,0 +1,53 @@
+[
+    {
+        "id": 0,
+        "name": "Sklep",
+        "description": "Przeglądaj i zamawiaj wszystkie produkty z naszego sklepu!",
+        "destination": "shop",
+        "availableFor0": true,
+        "availableFor1": true,
+        "availableFor2": true,
+        "isFeatured": true
+    },
+    {
+        "id": 1,
+        "name": "Dodaj zamówienie",
+        "description": "Jako sprzedawca możesz wystawić twoje zamówienie, jeżeli to jest to co pragniesz, jest to odpowiednia zakładka!",
+        "destination": "add-order",
+        "availableFor0": true,
+        "availableFor1": false,
+        "availableFor2": true,
+        "isFeatured": true
+    },
+    {
+        "id": 2,
+        "name": "Sprawdź złożone zamówienia",
+        "description": "Przeglądaj i zamawiaj wszystkie produkty z naszego sklepu!",
+        "destination": "check-orders",
+        "availableFor0": true,
+        "availableFor1": true,
+        "availableFor2": true,
+        "isFeatured": true
+    },
+    
+    {
+        "id": 3,
+        "name": "Zarządzanie użytkownikami",
+        "description": "Weryfikuj nowych użytkowników razem z panelem sterowania!",
+        "destination": "manage-users",
+        "availableFor0": true,
+        "availableFor1": false,
+        "availableFor2": false,
+        "isFeatured": true
+    },
+    {
+        "id": 4,
+        "name": "Wyloguj",
+        "description": "",
+        "destination": "logout",
+        "availableFor0": true,
+        "availableFor1": true,
+        "availableFor2": true,
+        "isFeatured": false
+    }
+]
