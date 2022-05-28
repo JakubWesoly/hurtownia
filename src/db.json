@@ -18,5 +18,43 @@
       "role": 2,
       "id": 3
     }
+  ],
+  "products": [
+    {
+      "name": "Kukurydza zwyczajna",
+      "desc": "Zwykła kukurydza tego typu",
+      "quantity": "420",
+      "price": "12",
+      "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779425/ihdmpkwhlqhoa6rj1epj.jpg",
+      "sellerId": "[",
+      "id": 1
+    },
+    {
+      "name": "Duża Czarna Kukurydza",
+      "desc": "Duża Czarna Kukurydza (ang. Big Black Corn) jest duża i czarna i kukurydza",
+      "quantity": "911",
+      "price": "33",
+      "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779580/gu1lmgrhtf7yssuzyhcn.jpg",
+      "sellerId": "[",
+      "id": 2
+    },
+    {
+      "name": "Kukurydza MARKIZA",
+      "desc": "nasiona kukrydzy, chyba?\n\nnie wiem znalazłem ogłoszenie na allegro lol",
+      "quantity": "100",
+      "price": "609",
+      "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779791/lptx3kgzpzh2laxxo3ik.webp",
+      "sellerId": "[",
+      "id": 3
+    },
+    {
+      "name": "Kukurydza Cukrowa",
+      "desc": "robi się z niej cukier\ntak o\nLorem ispum",
+      "quantity": "31",
+      "price": "9.99",
+      "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779887/f89ykgqlwutcy548fanl.jpg",
+      "sellerId": "[",
+      "id": 4
+    }
   ]
 }

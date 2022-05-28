@@ -1,17 +1,47 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 const AddOrder = () => {
   const [name, setName] = useState('');
   const [desc, setDesc] = useState('');
-  const [count, setCount] = useState(0);
-  const [price, setPrice] = useState(0.0);
+  const [count, setCount] = useState(null);
+  const [price, setPrice] = useState(null);
+  const image = useRef();
 
-  const handleSubmit = (e) => {
+  const uploadImage = () => {
+    const CLOUDINARY_URL =
+      'https://api.cloudinary.com/v1_1/dhk6z5vzz/image/upload';
+    const CLOUDINARY_UPLOAD_PRESET = 'eebchsaz';
+    const formData = new FormData();
+    formData.append('file', image.current.files[0]);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+    return fetch(CLOUDINARY_URL, {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.secure_url !== '') {
+          return data.secure_url;
+        }
+      })
+      .catch((err) => console.error(err));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    alert('działa');
-    // axios.post()
+    axios
+      .post('http://localhost:3001/products', {
+        name: name,
+        desc: desc,
+        quantity: count,
+        price: price,
+        imageUrl: await uploadImage(),
+        sellerId: localStorage.getItem('userInfo')[0],
+      })
+      .then((res) => alert('Poprawnie dodano produkt'))
+      .catch((err) => console.error(err));
   };
 
   return (
@@ -52,7 +82,7 @@ const AddOrder = () => {
             onChange={(e) => setPrice(e.target.value)}
           />
           <p>Zdjęcie produktu: </p>
-          <input type='file' />
+          <input type='file' accept='image/img, image/jpeg' ref={image} />
           <button
             className='button-small'
             style={{ gridColumnStart: '1', gridColumnEnd: '3', width: '100%' }}
