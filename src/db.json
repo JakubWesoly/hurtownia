@@ -26,7 +26,7 @@
       "quantity": "420",
       "price": "12",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779425/ihdmpkwhlqhoa6rj1epj.jpg",
-      "sellerId": "[",
+      "sellerId": "1",
       "id": 1
     },
     {
@@ -35,7 +35,7 @@
       "quantity": "911",
       "price": "33",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779580/gu1lmgrhtf7yssuzyhcn.jpg",
-      "sellerId": "[",
+      "sellerId": "3",
       "id": 2
     },
     {
@@ -44,7 +44,7 @@
       "quantity": "100",
       "price": "609",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779791/lptx3kgzpzh2laxxo3ik.webp",
-      "sellerId": "[",
+      "sellerId": "3",
       "id": 3
     },
     {
@@ -53,7 +53,7 @@
       "quantity": "31",
       "price": "9.99",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779887/f89ykgqlwutcy548fanl.jpg",
-      "sellerId": "[",
+      "sellerId": "3",
       "id": 4
     }
   ]

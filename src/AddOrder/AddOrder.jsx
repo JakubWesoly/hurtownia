@@ -8,6 +8,8 @@ const AddOrder = () => {
   const [price, setPrice] = useState(null);
   const image = useRef();
 
+  console.log(JSON.parse(localStorage.getItem('userInfo'))[0]);
+
   const uploadImage = () => {
     const CLOUDINARY_URL =
       'https://api.cloudinary.com/v1_1/dhk6z5vzz/image/upload';
@@ -38,7 +40,7 @@ const AddOrder = () => {
         quantity: count,
         price: price,
         imageUrl: await uploadImage(),
-        sellerId: localStorage.getItem('userInfo')[0],
+        sellerId: JSON.parse(localStorage.getItem('userInfo'))[0],
       })
       .then((res) => alert('Poprawnie dodano produkt'))
       .catch((err) => console.error(err));

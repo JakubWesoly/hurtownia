@@ -12,6 +12,11 @@ const Modal = ({ show, changeVisibility, children }) => {
     };
   }, [changeVisibility]);
 
+  useEffect(() => {
+    document.body.style.overflow = show ? 'hidden' : 'auto';
+    if (show) window.scrollTo({ top: 0 });
+  }, [show]);
+
   return (
     <>
       {show && (

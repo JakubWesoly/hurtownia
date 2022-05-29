@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ShopItem from './ShopItem/ShopItem';
 
 const Shop = () => {
   const [items, setItems] = useState([]);
@@ -17,17 +18,7 @@ const Shop = () => {
       </header>
       <div className='section-shop'>
         {items.map(
-          (item) =>
-            item.quantity > 0 && (
-              <div className='section-shop-item' key={item.id}>
-                <h3>{item.name}</h3>
-                <img src={item.imageUrl} alt='Kukurydza' />
-                <p>
-                  {item.quantity} szt. | {item.price}zł
-                </p>
-                <button className='button-small'>Zobacz Więcej</button>
-              </div>
-            )
+          (item) => item.quantity > 0 && <ShopItem item={item} key={item.id} />
         )}
       </div>
     </>
