@@ -204,8 +204,9 @@ body {
 
 .section-shop-item {
   background-color: var(--gray);
+  padding: 2rem;
   width: 90%;
-  height: 250px;
+  height: 300px;
   margin-bottom: 3rem;
   border-radius: 16px;
   display: grid;
@@ -213,9 +214,12 @@ body {
   justify-items: center;
   align-items: center;
 }
-.section-shop-item img {
+.section-shop-item > img {
   height: 150px;
+  width: 150px;
+  object-fit: cover;
   border-radius: 8px;
+  padding: 1rem;
 }
 .add-order-form {
   width: 100%;
@@ -265,19 +269,57 @@ body {
   grid-column: 2;
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  align-items: center;
 }
 .section-shop-modal > img {
   grid-row-start: 1;
   grid-row-end: 8;
-  padding-right: 75px;
-  object-fit: contain;
+  width: 70%;
+  height: 100%;
+  object-fit: cover;
   align-self: center;
+}
+.section-shop-modal > h3 {
+  font-size: 3rem;
+}
+.section-shop-modal > pre {
+  white-space: pre-wrap;
+  font-family: 'Lato', sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: var(--light);
+  padding: 1rem;
+  border-radius: 8px;
 }
 .number-selector {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   width: 150px;
+}
+.section-shop-cart {
+  width: 50px;
+  height: 50px;
+  background-color: var(--orange);
+  color: black;
+  font-size: 25px;
+  vertical-align: middle;
+  text-align: center;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 50%;
+  box-shadow: black 0 0 10px 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.section-shop-cart:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+.section-shop-cart-modal {
+  grid-column: 2;
+  width: 100%;
 }
 .number-selector-left,
 .number-selector-right,
@@ -305,7 +347,41 @@ body {
 .number-selector-right:hover {
   background-color: var(--light);
 }
-
+.cart-container {
+  padding: 3rem 0;
+  height: 80%;
+  overflow: auto;
+}
+.cart-item {
+  margin: 0;
+  width: 95%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 2fr 1fr 1fr 0.1fr;
+  align-items: center;
+  background-color: var(--dark);
+  cursor: auto;
+}
+.cart-item:hover {
+  background-color: var(--dark);
+}
+.cart-close {
+  color: red;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.cart-close:hover {
+  transform: scale(1.3);
+}
+.cart-summary {
+  height: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
 .number-selector-input::-webkit-outer-spin-button,
 .number-selector-input::-webkit-inner-spin-button {
   -webkit-appearance: none;
