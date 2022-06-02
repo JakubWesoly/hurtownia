@@ -19,17 +19,9 @@ const Shop = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   setCartItems(
-  //     cartItems.map((item, index) => {
-  //       return { id: index, ...item };
-  //     })
-  //   );
-  // }, []);
-
-  // useEffect(() => {
-  //   setCartItems(JSON.parse(localStorage.getItem('cart')));
-  // }, [localStorage.getItem('cart')]);
+  const handleSubmit = () => {
+    alert('clicked');
+  };
 
   return (
     <>
@@ -81,7 +73,9 @@ const Shop = () => {
             })}
           </ul>
           <div className='cart-summary'>
-            <button className='button-small'>Złóż zamówienie</button>
+            <button className='button-small' onClick={handleSubmit}>
+              Złóż zamówienie
+            </button>
             <p style={{ justifySelf: 'right' }}>
               Łączny koszt: &nbsp;
               {cartItems.reduce(

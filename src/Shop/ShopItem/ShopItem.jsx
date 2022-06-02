@@ -53,8 +53,8 @@ const ShopItem = ({ item, update }) => {
         });
       }
       localStorage.setItem('cart', JSON.stringify(cart));
-      update(JSON.parse(localStorage.getItem('cart')));
     }
+    update(JSON.parse(localStorage.getItem('cart')));
     alert('dodano do koszyka');
   };
 

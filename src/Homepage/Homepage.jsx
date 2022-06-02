@@ -46,6 +46,7 @@ const Homepage = () => {
       <Register
         show={isRegisterShown}
         changeRegisterVisibility={changeRegisterVisibility}
+        isFromAdminPanel={false}
       />
     </div>
   );

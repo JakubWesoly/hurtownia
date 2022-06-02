@@ -311,7 +311,7 @@ body {
   right: 50px;
   bottom: 50px;
   border-radius: 50%;
-  box-shadow: black 0 0 10px 10px;
+  box-shadow: black 0 0 10px;
   cursor: pointer;
   transition: all 0.3s;
 }

@@ -3,7 +3,7 @@ import perm from './permissions.json';
 
 const permissionScrapper = (returnGridStyle = false) => {
   let { role, verified } = userScrapper();
-  if (role === 2 && verified === false) {
+  if (verified === false) {
     role = 1;
   }
   let permissions = [...perm];

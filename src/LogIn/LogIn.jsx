@@ -27,7 +27,6 @@ const LogIn = ({ show, changeLoginVisibility }) => {
             data[0].verified,
           ])
         );
-        console.log(localStorage.getItem('userInfo'));
         navigate('/home');
       });
   };

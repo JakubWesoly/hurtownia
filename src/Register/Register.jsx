@@ -1,30 +1,60 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import Modal from '../Modal/Modal';
 
 const axios = require('axios');
 
-const LogIn = ({ show, changeRegisterVisibility }) => {
+const Register = ({
+  title,
+  show,
+  changeRegisterVisibility,
+  isFromAdminPanel,
+  update,
+}) => {
   const [log, setLogin] = useState('');
   const [pass, setPassword] = useState('');
 
-  const checkSeller = useRef(null);
+  const checkType = useRef(null);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    axios
-      .post('http://localhost:3001/users', {
-        login: log,
-        password: pass,
-        verified: false,
-        role: checkSeller.current.checked ? 2 : 1,
-      })
-      .then((resp) => {
-        alert('Poprawnie dodano użytkownika');
-      })
-      .catch((error) => {
-        console.log(error);
+    fetch(`http://localhost:3001/users?login=${log}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.length === 0) {
+          axios
+            .post('http://localhost:3001/users', {
+              login: log,
+              password: pass,
+              verified: isFromAdminPanel,
+              role: checkType.current.value,
+            })
+            .then((resp) => {
+              if (!isFromAdminPanel) {
+                localStorage.setItem(
+                  'userInfo',
+                  JSON.stringify([
+                    resp.data.id,
+                    resp.data.login,
+                    resp.data.role,
+                    resp.data.verified,
+                  ])
+                );
+                navigate('/home');
+              } else {
+                update();
+              }
+              alert('Poprawnie dodano użytkownika');
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        } else {
+          alert('Użytkownik z takim loginem już istnieje');
+        }
       });
   };
 
@@ -38,7 +68,7 @@ const LogIn = ({ show, changeRegisterVisibility }) => {
           }}
           onSubmit={(e) => handleSubmit(e)}
         >
-          <h2 className='login-modal-title'>Rejestracja</h2>
+          <h2 className='login-modal-title'>{title || 'Rejestracja'}</h2>
           <input
             type='text'
             placeholder='Login'
@@ -51,21 +81,16 @@ const LogIn = ({ show, changeRegisterVisibility }) => {
             value={pass}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <label>
-            <input
-              type='checkbox'
-              id='isSeller'
-              ref={checkSeller}
-              style={{ height: '12px' }}
-            />{' '}
-            &nbsp;
-            <label htmlFor='isSeller'>Jestem Sprzedawcą</label>
-          </label>
-          <button type='submit'>Zarejestruj</button>
+          <select ref={checkType}>
+            {isFromAdminPanel && <option value='0'>Admin</option>}
+            <option value='1'>Klient</option>
+            <option value='2'>Sprzedawca</option>
+          </select>
+          <button type='submit'>{title || 'Rejestracja'}</button>
         </form>
       </Modal>
     </>
   );
 };
 
-export default LogIn;
+export default Register;

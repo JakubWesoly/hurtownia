@@ -10,29 +10,29 @@
     {
       "login": "customer",
       "password": "customer",
-      "role": 1,
+      "role": "1",
       "verified": true,
       "id": 2
     },
     {
       "login": "seller",
       "password": "seller",
-      "role": 2,
+      "role": "2",
       "verified": true,
       "id": 3
     },
     {
       "login": "kubson",
       "password": "oguras",
-      "verified": false,
-      "role": 2,
+      "verified": true,
+      "role": "1",
       "id": 4
     },
     {
       "login": "volsan",
       "password": "slavaukraini",
-      "verified": false,
-      "role": 1,
+      "verified": true,
+      "role": "1",
       "id": 5
     }
   ],
@@ -73,5 +73,6 @@
       "sellerId": "3",
       "id": 4
     }
-  ]
+  ],
+  "orders": []
 }
