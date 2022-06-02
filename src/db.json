@@ -4,19 +4,36 @@
       "login": "admin",
       "password": "admin",
       "role": 0,
+      "verified": true,
       "id": 1
     },
     {
       "login": "customer",
       "password": "customer",
       "role": 1,
+      "verified": true,
       "id": 2
     },
     {
       "login": "seller",
       "password": "seller",
       "role": 2,
+      "verified": true,
       "id": 3
+    },
+    {
+      "login": "kubson",
+      "password": "oguras",
+      "verified": false,
+      "role": 2,
+      "id": 4
+    },
+    {
+      "login": "volsan",
+      "password": "slavaukraini",
+      "verified": false,
+      "role": 1,
+      "id": 5
     }
   ],
   "products": [
