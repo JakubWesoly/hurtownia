@@ -3,6 +3,7 @@ import { BsCart4 } from 'react-icons/bs';
 import { AiOutlineClose } from 'react-icons/ai';
 import Modal from '../Modal/Modal';
 import ShopItem from './ShopItem/ShopItem';
+import axios from 'axios';
 
 const Shop = () => {
   const [items, setItems] = useState([]);
@@ -10,6 +11,14 @@ const Shop = () => {
     JSON.parse(localStorage.getItem('cart')) || []
   );
   const [isCartShown, setIsCartShown] = useState(false);
+
+  const getQuantity = async (item) => {
+    return axios
+      .get(`http://localhost:3001/products/${item.productId}`)
+      .then((res) => {
+        return res.data.quantity;
+      });
+  };
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
@@ -19,8 +28,29 @@ const Shop = () => {
       });
   }, []);
 
-  const handleSubmit = () => {
-    alert('clicked');
+  const handleSubmit = async () => {
+    cartItems.forEach(async (item) => {
+      const available = await getQuantity(item);
+      if (available >= item.productQuantity) {
+        axios
+          .post('http://localhost:3001/orders', {
+            ...item,
+            status: '0',
+          })
+          .then((res) => {
+            axios.patch(`http://localhost:3001/products/${item.productId}`, {
+              quantity: available - item.productQuantity,
+            });
+          })
+          .then(() => alert('Poprawnie dodano element'))
+          .catch((err) => {
+            alert('Dodanie elementu nie powiodło się');
+            console.error(err);
+          });
+      } else {
+        alert('Dodanie elementu nie powiodło się');
+      }
+    });
   };
 
   return (

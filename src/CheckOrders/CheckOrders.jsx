@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
 
 const AddOrder = () => {
-    return(
-        <>
-        <h2>Check order site</h2>
-        </>
-    )
-}
+  return (
+    <>
+      <header className='section-header'>
+        <h2>Sprawdź zamówienia</h2>
+      </header>
+    </>
+  );
+};
 
 export default AddOrder;

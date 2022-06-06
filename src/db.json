@@ -32,7 +32,7 @@
       "login": "volsan",
       "password": "slavaukraini",
       "verified": true,
-      "role": "1",
+      "role": "0",
       "id": 5
     }
   ],
@@ -40,7 +40,7 @@
     {
       "name": "Kukurydza zwyczajna",
       "desc": "Zwykła kukurydza tego typu",
-      "quantity": "420",
+      "quantity": 200,
       "price": "12",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779425/ihdmpkwhlqhoa6rj1epj.jpg",
       "sellerId": "1",
@@ -49,7 +49,7 @@
     {
       "name": "Duża Czarna Kukurydza",
       "desc": "Duża Czarna Kukurydza (ang. Big Black Corn) jest duża i czarna i kukurydza",
-      "quantity": "911",
+      "quantity": 400,
       "price": "33",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779580/gu1lmgrhtf7yssuzyhcn.jpg",
       "sellerId": "3",
@@ -58,7 +58,7 @@
     {
       "name": "Kukurydza MARKIZA",
       "desc": "nasiona kukrydzy, chyba?\n\nnie wiem znalazłem ogłoszenie na allegro lol",
-      "quantity": "100",
+      "quantity": 100,
       "price": "609",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779791/lptx3kgzpzh2laxxo3ik.webp",
       "sellerId": "3",
@@ -67,12 +67,73 @@
     {
       "name": "Kukurydza Cukrowa",
       "desc": "robi się z niej cukier\ntak o\nLorem ispum",
-      "quantity": "31",
+      "quantity": 30,
       "price": "9.99",
       "imageUrl": "https://res.cloudinary.com/dhk6z5vzz/image/upload/v1653779887/f89ykgqlwutcy548fanl.jpg",
       "sellerId": "3",
       "id": 4
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "productId": 2,
+      "productName": "Duża Czarna Kukurydza",
+      "productQuantity": 20,
+      "productPrice": 660,
+      "sellerId": 3,
+      "buyerId": 1,
+      "status": "0",
+      "id": 1
+    },
+    {
+      "productId": 4,
+      "productName": "Kukurydza Cukrowa",
+      "productQuantity": 1,
+      "productPrice": 9.99,
+      "sellerId": 3,
+      "buyerId": 1,
+      "status": "0",
+      "id": 2
+    },
+    {
+      "productId": 1,
+      "productName": "Kukurydza zwyczajna",
+      "productQuantity": "200",
+      "productPrice": 2400,
+      "sellerId": 1,
+      "buyerId": 1,
+      "status": "0",
+      "id": 3
+    },
+    {
+      "productId": 1,
+      "productName": "Kukurydza zwyczajna",
+      "productQuantity": "200",
+      "productPrice": 2400,
+      "sellerId": 1,
+      "buyerId": 1,
+      "status": "0",
+      "id": 4
+    },
+    {
+      "productId": 1,
+      "productName": "Kukurydza zwyczajna",
+      "productQuantity": "200",
+      "productPrice": 2400,
+      "sellerId": 1,
+      "buyerId": 1,
+      "status": "0",
+      "id": 5
+    },
+    {
+      "productId": 1,
+      "productName": "Kukurydza zwyczajna",
+      "productQuantity": "200",
+      "productPrice": 2400,
+      "sellerId": 1,
+      "buyerId": 1,
+      "status": "0",
+      "id": 6
+    }
+  ]
 }
